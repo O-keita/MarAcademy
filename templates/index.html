@@ -31,9 +31,40 @@
           Free coding courses, scholarships, and career development for high
           school students
         </p>
+
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+            <title>Statistics</title>
+            <link
+              rel="stylesheet"
+              href="{{ url_for('static', filename='css/stats.css') }}"
+            />
+          </head>
+          <body>
+            <div class="stats-container">
+              <div class="stat-circle">
+                <span class="stat-number">4+</span>
+                <span class="stat-label">Users</span>
+              </div>
+              <div class="stat-circle">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Courses</span>
+              </div>
+            </div>
+          </body>
+        </html>
+
         <div class="hero-buttons">
-          <button class="btn login-btn">Login</button>
-          <button class="btn register-btn">Register</button>
+          <a href="{{ url_for('login') }}" class="btn login-btn"> Login</a>
+          <a href="{{ url_for('register') }}" class="btn register-btn">
+            Register
+          </a>
         </div>
       </div>
     </section>
@@ -103,6 +134,51 @@
         </div>
       </div>
     </section>
+
+    <div class="team">
+      <h2>Courses</h2>
+      <div class="team-container">
+        <div class="team-card">
+          <div class="card-image">
+            <img
+              src="https://omarkeita.tech/images/omar.png"
+              alt="Team Member Picture"
+            />
+          </div>
+          <div class="card-content">
+            <h2 class="name">Omar Keita</h2>
+            <p class="title">Founder</p>
+            <p class="degree">Bsc. Software Engineering</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="card-image">
+            <img
+              src="https://media.licdn.com/dms/image/v2/D5603AQHOVrQhZwjl_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706015710055?e=1730937600&v=beta&t=AUKjCf24HGzDqzSZ1rn_oACgIDAEtw7W3pDbnkYqUHQ"
+              alt="Team Member Picture"
+            />
+          </div>
+          <div class="card-content">
+            <h2 class="name">Bubacarr Bah</h2>
+            <p class="title">Marketing and Growth Strategist</p>
+            <p class="degree">Bsc. Commerce</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="card-image">
+            <img
+              src="{{url_for('static', filename='images/mahatech.jpeg')}}"
+              alt="Team Member Picture"
+            />
+          </div>
+          <div class="card-content">
+            <h2 class="name">Muhammed L. Touray</h2>
+            <p class="title">CEO and Operations Manager</p>
+            <p class="degree">Bsc. Computer Science</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer>

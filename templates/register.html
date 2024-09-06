@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/login.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">MarAcademy</div>
+      <nav>
+        <ul class="nav-menu">
+          <li>
+            <a href="{{ url_for('home', _anchor='overview') }}">Overview</a>
+          </li>
+          <li><a href="{{ url_for('home', _anchor='about') }}">About</a></li>
+          <li>
+            <a href="{{ url_for('home', _anchor='courses') }}">Courses</a>
+          </li>
+          <li>
+            <a href="{{ url_for('home', _anchor='mission') }}"
+              >Mission & Vision</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('home', _anchor='contact') }}">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="form-container">
+        <div class="form-content">
+          <form action="" method="post">
+            <h1 class="form-title">Register</h1>
+            {{ form.csrf_token }} {{ form.hidden_tag() }}
+
+            <div class="form-grid">
+              {% for field in form if field.widget.input_type != 'hidden' %}
+              <div class="form-group">
+                {{ field.label(class="label") }} {{ field(class="input") }}
+              </div>
+              {% endfor %}
+            </div>
+
+            <div class="control">
+              <button type="submit" class="submit-btn">Register</button>
+            </div>
+          </form>
+
+          <div class="register-link">
+            Already have an account?
+            <a href="{{ url_for('login') }}">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
